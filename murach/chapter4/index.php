@@ -10,7 +10,7 @@ if($category_id == NULL || $category_id == FALSE) {
 
 //Get name for current category
 $queryCategory = "SELECT * FROM categories
-				  WHERE categoryID = $category_id";
+				  WHERE categoryID = :category_id";
 $statement1 = $db -> prepare($queryCategory);
 $statement1 -> bindValue(':category_id', $category_id);
 $statement1 -> execute();
@@ -20,16 +20,23 @@ $statement1 -> closeCursor();
 //var_dump($category_name);
 
 //Get all categories
-$query = "SELECT * FROM categories
+$queryAllCategories = "SELECT * FROM categories
 		  ORDER BY categoryID";
-$categories = $db -> query($query);
+$statement2 = $db -> prepare($queryAllCategories);
+$statement2 -> execute();
+$categories = $statement2 -> fetchAll();
+$statement2 -> closeCursor();
 //var_dump($categories);
 
 //Get products for selected category
-$query = "SELECT * FROM products
-		  WHERE categoryID = $category_id
+$queryProducts = "SELECT * FROM products
+		  WHERE categoryID = :category_id
 		  ORDER BY productID";
-$products = $db -> query($query);
+$statement3 = $db -> prepare($queryProducts);
+$statement3 -> bindValue(':category_id', $category_id);
+$statement3 -> execute();
+$products = $statement3 -> fetchAll();
+$statement3 -> closeCursor();
 //var_dump($products);
 
 ?>
@@ -40,39 +47,52 @@ $products = $db -> query($query);
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<div id="page">
-	<div id="main">
+	<header><h1>Product Manager</h1></header>
+	<main>
 		<h1>Product List</h1>
 		<aside>
 			<h2>Categories</h2>
-			<ul class="nav">
-				<?php foreach($categories as $category) { ?>
-					<li>
-						<a href="?category_id=<?php echo $category['categoryID'];?>">
-							<?php echo $category['categoryName']; ?>
-						</a>
-					</li>
-				<?php } ?>
-			</ul>
+			<nav>
+				<ul>
+					<?php foreach($categories as $category) { ?>
+						<li>
+							<a href=".?category_id=<?php echo $category['categoryID'];?>">
+								<?php echo $category['categoryName']; ?>
+							</a>
+						</li>
+					<?php } ?>
+				</ul>
+			</nav>
 		</aside>
-		<div id="content">
+		<section>
 			<h2><?= $category_name ?></h2>
 			<table>
 				<tr>
 					<th>Code</th>
 					<th>Name</th>
 					<th class="right">Price</th>
+					<th>&nbsp;</th>
 				</tr>
 				<?php foreach($products as $product) { ?>
 				<tr>
 					<td><?= $product['productCode']; ?></td>
 					<td><?= $product['productName']; ?></td>
 					<td class="right"><?= $product['listPrice']; ?></td>
+					<td>
+						<form action="delete_product.php" method="post">
+							<input type="hidden" name="product_id" value="<?= $product['productID'] ;?>">
+							<input type="hidden" name="category_id" value="<?= $product['categoryID'] ;?>">
+							<input type="submit" name="Delete" value="Borrar">
+						</form>
+					</td>
 				</tr>
 				<?php } ?>
 			</table>
-		</div>
-	</div>
-</div>
+			<p><a href="add_product_form.php">Add Product</a></p>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; <?= date('Y'); ?> My Guitar Shop, Inc.</p>
+	</footer>
 </body>
 </html>
