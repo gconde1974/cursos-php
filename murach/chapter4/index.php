@@ -88,7 +88,7 @@ $statement3 -> closeCursor();
 				</tr>
 				<?php } ?>
 			</table>
-			<p><a href="add_product_form.php">Add Product</a></p>
+			<p><a href="add_product_form.php">Add Product</a> | <a href="category_list.php">Category List</a></p>
 		</section>
 	</main>
 	<footer>
