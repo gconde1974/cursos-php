@@ -1,0 +1,23 @@
+* {
+	margin:.5em 1em;
+}
+main {
+	border:2px solid black;
+	padding: 1em;
+	width: 18%;
+}
+h1 {
+	font-family: arial, sans-serif;
+}
+p {
+	margin-left: 3em;
+}
+#copyright {
+	font-size: 80%;
+}
+.blue {
+	color: blue;
+}
+.left {
+	text-align: left;
+}
