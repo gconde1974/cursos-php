@@ -10,9 +10,7 @@ h2+p {
 main>p {
 	font-size: 80%;
 }
-li>a {
-	color:orange;
-}
+
 h2~p {
 	margin-left: 2em;
 }
@@ -22,12 +20,16 @@ ul.speakers{
 *[href] {
 	font-size: 95%;
 	background: blue;
+	color: aqua;
 }
 a[href] {
 	font-family: arial, sans-serif;
 }
+li>a {
+	color:red;
+}
 input[type="submit"] {
-	border: 1px solid red;
-	color: orangered;
+	border: 5px dotted orange;
+	color: orange;
 	background: yellow;
 }
