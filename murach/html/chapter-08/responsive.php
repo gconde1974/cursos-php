@@ -15,9 +15,7 @@
 	<main>
 		<h2>Main content</h2>
 		<p>lorem ipsum</p>
-		
 		<?php include('inc/carrusel.php'); ?>
-	
 	</main>	
 	<aside>
 		<h2>aside</h2>
