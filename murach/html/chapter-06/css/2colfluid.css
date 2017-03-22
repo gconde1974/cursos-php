@@ -1,0 +1,28 @@
+body {
+	width: 90%;
+	background: white;
+	margin: 15px auto;
+	border: 1px solid black;
+	height: 350px;
+}
+header{
+	border-bottom: 2px solid #ef9c00;
+}
+main {
+	//width: 66%;
+	//height: 350px;
+	//border-right: 2px solid #ef9c00;
+	float: left;
+	
+}
+aside {
+	height: 250px;
+	width: 360px;
+	border-left: 2px solid #ef9c00;
+	float: right;
+	
+}
+footer {
+	border-top: 2px solid #ef9c00;
+	clear: both;
+}

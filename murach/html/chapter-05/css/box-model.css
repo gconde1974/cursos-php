@@ -1,0 +1,23 @@
+body {
+	border: 3px dotted black;
+}
+main {
+	border: 6px double blue;
+	border-radius: 10px 20px 20px 0px;
+	box-shadow: -3px 3px 18px 6px red;
+	width: 500px;
+	margin: 20px;
+	padding: 10px;
+}
+h1, p {
+	border: 1px dashed black;
+	padding: 10px;
+}
+h1 {
+	margin: .5em 0 .25em;
+	padding-left: 15px;
+}
+p {
+	margin: 0px;
+	padding-left: 15px;
+}

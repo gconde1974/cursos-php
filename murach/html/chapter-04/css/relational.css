@@ -1,0 +1,35 @@
+main li {
+	font-size: 90%;
+}
+ul a{
+	color: green;
+}
+h2+p {
+	margin-top: .5em;
+}
+main>p {
+	font-size: 80%;
+}
+
+h2~p {
+	margin-left: 2em;
+}
+ul.speakers{
+	list-style-type: square;
+}
+*[href] {
+	font-size: 95%;
+	background: blue;
+	color: aqua;
+}
+a[href] {
+	font-family: arial, sans-serif;
+}
+li>a {
+	color:red;
+}
+input[type="submit"] {
+	border: 5px dotted orange;
+	color: orange;
+	background: yellow;
+}
