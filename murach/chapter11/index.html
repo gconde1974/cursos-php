@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Future Value Calculator</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<p>our company is conducting a survey. please anser the question below</p>
+	<label for="link">what is your prefered search engine:</label>
+	<input type="url" name="link" id="link" list="links">
+	<datalist id="links">
+		<option value="http://www.google.com" label="Google"></option>
+		<option value="http://www.yahoo.com" label="Yahoo"></option>
+		<option value="http://www.bing.com" label="Bing"></option>
+		<option value="http://www.dogpile.com" label="Dogpile"></option>
+	</datalist>
+	<hr>
+	<h3>your information</h3>
+	<form name="test_form" action="test.php" method="get">
+		<label for="investment">monthly investment:</label>
+		<input type="number" name="investment" id="investment" min="100" max="1000" step="100" value="300">
+		<br><br>
+		<label for="book">rate the book from 1 to 5:</label>
+		<input type="range" name="book" id="book" min="1" max="5" step="1">
+		<br><br>
+		<input type="submit" name="submit" value="submit survey">
+	</form>
+	<hr>
+	date and time: 
+	<input type="datetime" name="datetime"><br><br>
+	local date and time:
+	<input type="datetime-local" name="datetimelocal"><br><br>
+	month:
+	<input type="month" name="month"><br><br>
+	week:
+	<input type="week" name="week"><br><br>
+	time:
+	<input type="time" name="time"><br><br>
+	date:
+	<input type="date" name="date">
+	<hr>
+	<form method="get" action="http://www.google.com/search">
+		<input type="search" name="q" size="30" maxlength="255">
+		<input type="hidden" name="domains" value="http://www.murach.com">
+		<input type="hidden" name="sitesearch" value="http://www.murach.com">
+		<input type="submit" name="search" value="search">
+	</form>
+</body>
+</html>
