@@ -17,7 +17,7 @@ class Person extends Molde{
 	}
 
 	public function ingresaNombre($nombre){
-		echo $this->nombre = $nombre;
+		$this->nombre = $nombre;
 	}
 	public function obtenerNombre(){
 		echo $this->nombre;
